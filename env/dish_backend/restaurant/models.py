@@ -17,3 +17,18 @@ class Restaurant(models.Model):
 
     def __str__(self):
         return self.name
+
+class User(models.Model):
+    id = models.AutoField(primary_key=True)
+    externalId = models.CharField(max_length=255, unique=True)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
+    password = models.CharField(max_length=255)  # Ensure to handle password securely - using auth library
+    city = models.CharField(max_length=255)
+    state = models.CharField(max_length=255)
+    reviews_left = models.IntegerField(default=0)
+    phone_number = models.CharField(max_length=20)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"

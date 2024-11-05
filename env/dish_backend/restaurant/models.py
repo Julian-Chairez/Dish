@@ -32,3 +32,34 @@ class User(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+class MenuItem(models.Model):
+    id = models.AutoField(primary_key=True)
+    external = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255)
+    restaurant_external_id = models.CharField(max_length=50)
+    food_item_cat = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    rating_ovr = models.DecimalField(max_digits=2, decimal_places=1)
+    grade_rating_ovr = models.IntegerField()
+    rating_cat = models.DecimalField(max_digits=2, decimal_places=1)
+    grade_rating_cat = models.IntegerField()
+    reviews = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
+class ReviewTable(models.Model):
+    id = models.AutoField(primary_key=True)
+    external_id = models.CharField(max_length=255, unique=True)
+    date = models.DateField()
+    user_external_id = models.CharField(max_length=255)
+    menu_external_id = models.CharField(max_length=255)
+    review_text = models.TextField()
+    review_rating_ovr = models.DecimalField(max_digits=2, decimal_places=1)
+    review_scale_ovr = models.IntegerField()
+    review_rating_cat = models.DecimalField(max_digits=2, decimal_places=1)
+    review_scale_cat = models.IntegerField()
+
+    def __str__(self):
+        return self.external_id

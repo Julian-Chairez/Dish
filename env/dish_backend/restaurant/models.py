@@ -45,6 +45,7 @@ class MenuItem(models.Model):
     rating_cat = models.DecimalField(max_digits=2, decimal_places=1)
     grade_rating_cat = models.IntegerField()
     reviews = models.IntegerField()
+    portion_size = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name

@@ -51,15 +51,14 @@ class MenuItem(models.Model):
 
 class ReviewTable(models.Model):
     id = models.AutoField(primary_key=True)
-    external_id = models.CharField(max_length=255, unique=True)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True)
     user_external_id = models.CharField(max_length=255)
     menu_external_id = models.CharField(max_length=255)
     review_text = models.TextField()
-    review_rating_ovr = models.DecimalField(max_digits=2, decimal_places=1)
-    review_scale_ovr = models.IntegerField()
-    review_rating_cat = models.DecimalField(max_digits=2, decimal_places=1)
-    review_scale_cat = models.IntegerField()
+    review_rating_ovr = models.DecimalField(max_digits=2, decimal_places=1,null=True)
+    review_scale_ovr = models.IntegerField(null=True)
+    review_rating_cat = models.DecimalField(max_digits=2, decimal_places=1,null=True)
+    review_scale_cat = models.IntegerField(null=True)
 
     def __str__(self):
         return self.external_id

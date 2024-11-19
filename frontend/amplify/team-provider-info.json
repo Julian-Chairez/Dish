@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dish-staging-94363-authRole",
+      "UnauthRoleArn": "arn:aws:iam::894346711952:role/amplify-dish-staging-94363-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::894346711952:role/amplify-dish-staging-94363-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-dish-staging-94363-deployment",
+      "UnauthRoleName": "amplify-dish-staging-94363-unauthRole",
+      "StackName": "amplify-dish-staging-94363",
+      "StackId": "arn:aws:cloudformation:us-east-1:894346711952:stack/amplify-dish-staging-94363/38061930-9bbe-11ef-9755-0e06734e2e5d",
+      "AmplifyAppId": "d33qg7k6yl8zx"
+    },
+    "categories": {
+      "auth": {
+        "dish5aed8c8f": {}
+      }
+    }
+  }
+}
